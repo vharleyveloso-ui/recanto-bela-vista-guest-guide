@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BaresRouteImport } from './routes/bares'
+import { Route as ComoChegarRouteImport } from './routes/como-chegar'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as LocalizacaoRouteImport } from './routes/localizacao'
+import { Route as PadariasECafesRouteImport } from './routes/padarias-e-cafes'
+import { Route as QuemSomosRouteImport } from './routes/quem-somos'
+import { Route as RegrasRouteImport } from './routes/regras'
+import { Route as RestaurantesRouteImport } from './routes/restaurantes'
+import { Route as WifiRouteImport } from './routes/wifi'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BaresRoute = BaresRouteImport.update({
+  id: '/bares',
+  path: '/bares',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComoChegarRoute = ComoChegarRouteImport.update({
+  id: '/como-chegar',
+  path: '/como-chegar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocalizacaoRoute = LocalizacaoRouteImport.update({
+  id: '/localizacao',
+  path: '/localizacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PadariasECafesRoute = PadariasECafesRouteImport.update({
+  id: '/padarias-e-cafes',
+  path: '/padarias-e-cafes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuemSomosRoute = QuemSomosRouteImport.update({
+  id: '/quem-somos',
+  path: '/quem-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegrasRoute = RegrasRouteImport.update({
+  id: '/regras',
+  path: '/regras',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RestaurantesRoute = RestaurantesRouteImport.update({
+  id: '/restaurantes',
+  path: '/restaurantes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WifiRoute = WifiRouteImport.update({
+  id: '/wifi',
+  path: '/wifi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bares': typeof BaresRoute
+  '/como-chegar': typeof ComoChegarRoute
+  '/contato': typeof ContatoRoute
+  '/localizacao': typeof LocalizacaoRoute
+  '/padarias-e-cafes': typeof PadariasECafesRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/regras': typeof RegrasRoute
+  '/restaurantes': typeof RestaurantesRoute
+  '/wifi': typeof WifiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bares': typeof BaresRoute
+  '/como-chegar': typeof ComoChegarRoute
+  '/contato': typeof ContatoRoute
+  '/localizacao': typeof LocalizacaoRoute
+  '/padarias-e-cafes': typeof PadariasECafesRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/regras': typeof RegrasRoute
+  '/restaurantes': typeof RestaurantesRoute
+  '/wifi': typeof WifiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bares': typeof BaresRoute
+  '/como-chegar': typeof ComoChegarRoute
+  '/contato': typeof ContatoRoute
+  '/localizacao': typeof LocalizacaoRoute
+  '/padarias-e-cafes': typeof PadariasECafesRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/regras': typeof RegrasRoute
+  '/restaurantes': typeof RestaurantesRoute
+  '/wifi': typeof WifiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/bares'
+    | '/como-chegar'
+    | '/contato'
+    | '/localizacao'
+    | '/padarias-e-cafes'
+    | '/quem-somos'
+    | '/regras'
+    | '/restaurantes'
+    | '/wifi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bares'
+    | '/como-chegar'
+    | '/contato'
+    | '/localizacao'
+    | '/padarias-e-cafes'
+    | '/quem-somos'
+    | '/regras'
+    | '/restaurantes'
+    | '/wifi'
+  id:
+    | '__root__'
+    | '/'
+    | '/bares'
+    | '/como-chegar'
+    | '/contato'
+    | '/localizacao'
+    | '/padarias-e-cafes'
+    | '/quem-somos'
+    | '/regras'
+    | '/restaurantes'
+    | '/wifi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BaresRoute: typeof BaresRoute
+  ComoChegarRoute: typeof ComoChegarRoute
+  ContatoRoute: typeof ContatoRoute
+  LocalizacaoRoute: typeof LocalizacaoRoute
+  PadariasECafesRoute: typeof PadariasECafesRoute
+  QuemSomosRoute: typeof QuemSomosRoute
+  RegrasRoute: typeof RegrasRoute
+  RestaurantesRoute: typeof RestaurantesRoute
+  WifiRoute: typeof WifiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bares': {
+      id: '/bares'
+      path: '/bares'
+      fullPath: '/bares'
+      preLoaderRoute: typeof BaresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-chegar': {
+      id: '/como-chegar'
+      path: '/como-chegar'
+      fullPath: '/como-chegar'
+      preLoaderRoute: typeof ComoChegarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/localizacao': {
+      id: '/localizacao'
+      path: '/localizacao'
+      fullPath: '/localizacao'
+      preLoaderRoute: typeof LocalizacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/padarias-e-cafes': {
+      id: '/padarias-e-cafes'
+      path: '/padarias-e-cafes'
+      fullPath: '/padarias-e-cafes'
+      preLoaderRoute: typeof PadariasECafesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-somos': {
+      id: '/quem-somos'
+      path: '/quem-somos'
+      fullPath: '/quem-somos'
+      preLoaderRoute: typeof QuemSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/regras': {
+      id: '/regras'
+      path: '/regras'
+      fullPath: '/regras'
+      preLoaderRoute: typeof RegrasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/restaurantes': {
+      id: '/restaurantes'
+      path: '/restaurantes'
+      fullPath: '/restaurantes'
+      preLoaderRoute: typeof RestaurantesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wifi': {
+      id: '/wifi'
+      path: '/wifi'
+      fullPath: '/wifi'
+      preLoaderRoute: typeof WifiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BaresRoute: BaresRoute,
+  ComoChegarRoute: ComoChegarRoute,
+  ContatoRoute: ContatoRoute,
+  LocalizacaoRoute: LocalizacaoRoute,
+  PadariasECafesRoute: PadariasECafesRoute,
+  QuemSomosRoute: QuemSomosRoute,
+  RegrasRoute: RegrasRoute,
+  RestaurantesRoute: RestaurantesRoute,
+  WifiRoute: WifiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
