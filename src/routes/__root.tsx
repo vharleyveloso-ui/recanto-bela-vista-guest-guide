@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { AIRBNB_URL, NAV } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -78,20 +79,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Recanto Bela Vista · Cabo Frio" },
+      { name: "description", content: "Guia do hóspede do Recanto Bela Vista em Cabo Frio." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500&display=swap" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
@@ -120,8 +117,30 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+          <Link to="/" className="font-display text-xl">Recanto Bela Vista</Link>
+          <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer"
+             className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:opacity-90">
+            Reservar
+          </a>
+        </div>
+        <nav className="mx-auto flex max-w-6xl gap-5 overflow-x-auto px-6 pb-3 text-sm text-muted-foreground">
+          {NAV.map((n) => (
+            <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-foreground"
+              activeProps={{ className: "text-primary font-medium" }}>
+              {n.label}
+            </Link>
+          ))}
+        </nav>
+      </header>
+      <main><Outlet /></main>
+      <footer className="border-t border-border bg-secondary">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-sm text-muted-foreground md:flex-row">
+          <span>Recanto Bela Vista · Cabo Frio, RJ</span>
+          <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Ver anúncio no Airbnb</a>
+        </div>
+      </footer>
     </QueryClientProvider>
   );
 }
