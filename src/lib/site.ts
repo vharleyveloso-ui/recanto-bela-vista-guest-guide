@@ -13,6 +13,8 @@ export const PHOTOS = [
 export const NAV = [
   { to: "/quem-somos", label: "Quem somos" },
   { to: "/como-chegar", label: "Como chegar" },
+  { to: "/check-in", label: "Check-in" },
+  { to: "/check-out", label: "Check-out" },
   { to: "/regras", label: "Regras da casa" },
   { to: "/contato", label: "Contato" },
   { to: "/localizacao", label: "Localização" },

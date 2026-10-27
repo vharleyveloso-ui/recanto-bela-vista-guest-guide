@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { AIRBNB_URL, NAV } from "../lib/site";
+import { NAV } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -118,12 +118,8 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-center px-6 py-4">
           <Link to="/" className="font-display text-xl">Recanto Bela Vista</Link>
-          <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer"
-             className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:opacity-90">
-            Reservar
-          </a>
         </div>
         <nav className="mx-auto flex max-w-6xl gap-5 overflow-x-auto px-6 pb-3 text-sm text-muted-foreground">
           {NAV.map((n) => (
@@ -136,9 +132,8 @@ function RootComponent() {
       </header>
       <main><Outlet /></main>
       <footer className="border-t border-border bg-secondary">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-sm text-muted-foreground md:flex-row">
-          <span>Recanto Bela Vista · Cabo Frio, RJ</span>
-          <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Ver anúncio no Airbnb</a>
+        <div className="mx-auto px-6 py-8 text-center text-sm text-muted-foreground">
+          Recanto Bela Vista · Cabo Frio, RJ
         </div>
       </footer>
     </QueryClientProvider>

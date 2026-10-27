@@ -1,14 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { User, Car, ClipboardList, Smartphone, MapPin, Wifi, Coffee, Martini, UtensilsCrossed } from "lucide-react";
+import { User, Car, ClipboardList, Smartphone, MapPin, Wifi, Coffee, Martini, UtensilsCrossed, LogIn, LogOut } from "lucide-react";
 import { NAV, PHOTOS } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Recanto Bela Vista · Casa com piscina em Cabo Frio" },
-      { name: "description", content: "Casa inteira em Cabo Frio com piscina privativa, churrasqueira e 2 quartos. Reserve pelo Airbnb." },
-      { property: "og:title", content: "Recanto Bela Vista · Cabo Frio" },
-      { property: "og:description", content: "Casa com piscina privativa e churrasqueira em Cabo Frio. Reserve pelo Airbnb." },
+      { title: "Recanto Bela Vista · Guia de Boas Vindas" },
+      { name: "description", content: "Guia do hóspede do Recanto Bela Vista em Cabo Frio: check-in, regras, Wi‑Fi, localização e dicas." },
+      { property: "og:title", content: "Recanto Bela Vista · Guia de Boas Vindas" },
+      { property: "og:description", content: "Tudo o que você precisa para sua estadia no Recanto Bela Vista." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:image", content: PHOTOS[0] },
@@ -18,18 +18,16 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const ICONS = { "/quem-somos": User, "/como-chegar": Car, "/regras": ClipboardList, "/contato": Smartphone, "/localizacao": MapPin, "/wifi": Wifi, "/padarias-e-cafes": Coffee, "/bares": Martini, "/restaurantes": UtensilsCrossed } as const;
+const ICONS = { "/quem-somos": User, "/como-chegar": Car, "/check-in": LogIn, "/check-out": LogOut, "/regras": ClipboardList, "/contato": Smartphone, "/localizacao": MapPin, "/wifi": Wifi, "/padarias-e-cafes": Coffee, "/bares": Martini, "/restaurantes": UtensilsCrossed } as const;
 
 function Index() {
   return (
     <>
-      <section className="relative isolate min-h-[85vh] overflow-hidden">
+      <section className="relative isolate min-h-[70vh] overflow-hidden">
         <img src={PHOTOS[0]} alt="Recanto Bela Vista" className="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-hero-overlay" />
-        <div className="mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-end px-6 pb-20">
-          <p className="text-sm uppercase tracking-[0.3em] text-hero-foreground/80">{"\n"}</p>
-          <h1 className="mt-3 max-w-3xl font-script text-6xl md:text-8xl text-hero-foreground" style={{ fontFamily: "var(--font-script)" }}>Guia de Boas Vindas!</h1>
-          <p className="mt-4 max-w-xl text-lg text-hero-foreground/90">{"\n"}</p>
+        <div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-center justify-center px-6 text-center">
+          <h1 className="font-script text-7xl leading-tight text-hero-foreground md:text-9xl" style={{ fontFamily: "var(--font-script)" }}>Guia de Boas Vindas!</h1>
         </div>
       </section>
 
