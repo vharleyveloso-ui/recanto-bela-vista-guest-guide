@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { User, Car, ClipboardList, Smartphone, MapPin, Wifi, Coffee, Martini, UtensilsCrossed } from "lucide-react";
 import { AIRBNB_URL, NAV, PHOTOS } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -17,6 +18,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const ICONS = { "/quem-somos": User, "/como-chegar": Car, "/regras": ClipboardList, "/contato": Smartphone, "/localizacao": MapPin, "/wifi": Wifi, "/padarias-e-cafes": Coffee, "/bares": Martini, "/restaurantes": UtensilsCrossed } as const;
+
 function Index() {
   return (
     <>
@@ -25,7 +28,7 @@ function Index() {
         <div className="absolute inset-0 -z-10 bg-hero-overlay" />
         <div className="mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-end px-6 pb-20">
           <p className="text-sm uppercase tracking-[0.3em] text-hero-foreground/80">Cabo Frio · RJ</p>
-          <h1 className="mt-3 max-w-3xl font-display text-5xl md:text-7xl text-hero-foreground">Recanto Bela Vista</h1>
+          <h1 className="mt-3 max-w-3xl font-script text-6xl md:text-8xl text-hero-foreground" style={{ fontFamily: "var(--font-script)" }}>Seja bem-vindo!</h1>
           <p className="mt-4 max-w-xl text-lg text-hero-foreground/90">
             Piscina com cascata, churrasqueira e sol o dia inteiro. 4 hóspedes · 2 quartos · 2 banheiros.
           </p>
@@ -43,16 +46,21 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-24">
-        <h2 className="font-display text-3xl md:text-4xl">Guia do hóspede</h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {NAV.map((n) => (
-            <Link key={n.to} to={n.to}
-              className="group rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-0.5 hover:shadow-soft">
-              <span className="font-display text-xl">{n.label}</span>
-              <span className="mt-2 block text-sm text-primary group-hover:underline">Ver página →</span>
-            </Link>
-          ))}
+        <h2 className="text-center text-4xl md:text-5xl text-foreground" style={{ fontFamily: "var(--font-script)" }}>Aqui você encontra tudo o que precisa!</h2>
+        <div className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4">
+          {NAV.map((n) => {
+            const Icon = ICONS[n.to];
+            return (
+              <Link key={n.to} to={n.to} className="group flex flex-col items-center gap-2 text-center">
+                <span className="flex aspect-square w-full max-w-28 items-center justify-center rounded-3xl bg-primary text-primary-foreground shadow-soft transition group-hover:-translate-y-1">
+                  <Icon className="h-1/2 w-1/2" strokeWidth={1.75} />
+                </span>
+                <span className="text-xs font-medium uppercase tracking-wide text-foreground sm:text-sm">{n.label}</span>
+              </Link>
+            );
+          })}
         </div>
+        <p className="mt-14 text-center text-3xl text-foreground" style={{ fontFamily: "var(--font-script)" }}>Aproveite cada momento!</p>
       </section>
     </>
   );
