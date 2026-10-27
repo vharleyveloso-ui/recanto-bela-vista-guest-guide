@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BaresRouteImport } from './routes/bares'
 import { Route as CheckInRouteImport } from './routes/check-in'
 import { Route as CheckOutRouteImport } from './routes/check-out'
-import { Route as ComoChegarRouteImport } from './routes/como-chegar'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as LocalizacaoRouteImport } from './routes/localizacao'
 import { Route as PadariasECafesRouteImport } from './routes/padarias-e-cafes'
@@ -40,11 +39,6 @@ const CheckInRoute = CheckInRouteImport.update({
 const CheckOutRoute = CheckOutRouteImport.update({
   id: '/check-out',
   path: '/check-out',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComoChegarRoute = ComoChegarRouteImport.update({
-  id: '/como-chegar',
-  path: '/como-chegar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -88,7 +82,6 @@ export interface FileRoutesByFullPath {
   '/bares': typeof BaresRoute
   '/check-in': typeof CheckInRoute
   '/check-out': typeof CheckOutRoute
-  '/como-chegar': typeof ComoChegarRoute
   '/contato': typeof ContatoRoute
   '/localizacao': typeof LocalizacaoRoute
   '/padarias-e-cafes': typeof PadariasECafesRoute
@@ -102,7 +95,6 @@ export interface FileRoutesByTo {
   '/bares': typeof BaresRoute
   '/check-in': typeof CheckInRoute
   '/check-out': typeof CheckOutRoute
-  '/como-chegar': typeof ComoChegarRoute
   '/contato': typeof ContatoRoute
   '/localizacao': typeof LocalizacaoRoute
   '/padarias-e-cafes': typeof PadariasECafesRoute
@@ -117,7 +109,6 @@ export interface FileRoutesById {
   '/bares': typeof BaresRoute
   '/check-in': typeof CheckInRoute
   '/check-out': typeof CheckOutRoute
-  '/como-chegar': typeof ComoChegarRoute
   '/contato': typeof ContatoRoute
   '/localizacao': typeof LocalizacaoRoute
   '/padarias-e-cafes': typeof PadariasECafesRoute
@@ -133,7 +124,6 @@ export interface FileRouteTypes {
     | '/bares'
     | '/check-in'
     | '/check-out'
-    | '/como-chegar'
     | '/contato'
     | '/localizacao'
     | '/padarias-e-cafes'
@@ -147,7 +137,6 @@ export interface FileRouteTypes {
     | '/bares'
     | '/check-in'
     | '/check-out'
-    | '/como-chegar'
     | '/contato'
     | '/localizacao'
     | '/padarias-e-cafes'
@@ -161,7 +150,6 @@ export interface FileRouteTypes {
     | '/bares'
     | '/check-in'
     | '/check-out'
-    | '/como-chegar'
     | '/contato'
     | '/localizacao'
     | '/padarias-e-cafes'
@@ -176,7 +164,6 @@ export interface RootRouteChildren {
   BaresRoute: typeof BaresRoute
   CheckInRoute: typeof CheckInRoute
   CheckOutRoute: typeof CheckOutRoute
-  ComoChegarRoute: typeof ComoChegarRoute
   ContatoRoute: typeof ContatoRoute
   LocalizacaoRoute: typeof LocalizacaoRoute
   PadariasECafesRoute: typeof PadariasECafesRoute
@@ -214,13 +201,6 @@ declare module '@tanstack/react-router' {
       path: '/check-out'
       fullPath: '/check-out'
       preLoaderRoute: typeof CheckOutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-chegar': {
-      id: '/como-chegar'
-      path: '/como-chegar'
-      fullPath: '/como-chegar'
-      preLoaderRoute: typeof ComoChegarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -280,7 +260,6 @@ const rootRouteChildren: RootRouteChildren = {
   BaresRoute: BaresRoute,
   CheckInRoute: CheckInRoute,
   CheckOutRoute: CheckOutRoute,
-  ComoChegarRoute: ComoChegarRoute,
   ContatoRoute: ContatoRoute,
   LocalizacaoRoute: LocalizacaoRoute,
   PadariasECafesRoute: PadariasECafesRoute,
