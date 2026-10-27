@@ -12,9 +12,7 @@ export const PHOTOS = [
 
 export const NAV = [
   { to: "/quem-somos", label: "Quem somos" },
-  { to: "/como-chegar", label: "Como chegar" },
   { to: "/check-in", label: "Check-in" },
-  { to: "/check-out", label: "Check-out" },
   { to: "/regras", label: "Regras da casa" },
   { to: "/contato", label: "Contato" },
   { to: "/localizacao", label: "Localização" },
@@ -22,6 +20,7 @@ export const NAV = [
   { to: "/padarias-e-cafes", label: "Padarias e cafés" },
   { to: "/bares", label: "Bares" },
   { to: "/restaurantes", label: "Restaurantes" },
+  { to: "/check-out", label: "Check-out" },
 ] as const;
 
 export function pageHead(title: string, description: string) {
