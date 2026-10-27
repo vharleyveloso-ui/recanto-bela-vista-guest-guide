@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { User, Car, ClipboardList, Smartphone, MapPin, Wifi, Coffee, Martini, UtensilsCrossed } from "lucide-react";
-import { AIRBNB_URL, NAV, PHOTOS } from "@/lib/site";
+import { NAV, PHOTOS } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,10 +30,6 @@ function Index() {
           <p className="text-sm uppercase tracking-[0.3em] text-hero-foreground/80">{"\n"}</p>
           <h1 className="mt-3 max-w-3xl font-script text-6xl md:text-8xl text-hero-foreground" style={{ fontFamily: "var(--font-script)" }}>Guia de Boas Vindas!</h1>
           <p className="mt-4 max-w-xl text-lg text-hero-foreground/90">{"\n"}</p>
-          <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer"
-             className="mt-8 inline-flex w-fit rounded-full bg-primary px-8 py-4 font-medium text-primary-foreground shadow-soft transition hover:opacity-90">
-            Reservar no Airbnb
-          </a>
         </div>
       </section>
 
