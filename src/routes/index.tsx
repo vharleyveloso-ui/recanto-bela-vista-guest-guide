@@ -33,10 +33,26 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl grid-cols-2 gap-3 px-6 py-16 md:grid-cols-4">
-        {PHOTOS.slice(1).map((src, i) => (
-          <img key={i} src={src} alt="" className="aspect-square w-full rounded-2xl object-cover" />
-        ))}
+      <section className="mx-auto max-w-3xl px-6 py-16">
+        <div className="rounded-3xl bg-card px-7 py-12 shadow-soft sm:px-12">
+          <h2 className="text-center font-script text-5xl text-primary sm:text-6xl" style={{ fontFamily: "var(--font-script)" }}>
+            Seja bem vindo
+          </h2>
+          <div className="mx-auto mt-8 max-w-xl space-y-5 text-center text-lg leading-relaxed text-foreground/90">
+            <p>
+              Olá! Sejam muito bem-vindos ao <span className="font-medium text-primary">Recanto Bela Vista</span>.
+            </p>
+            <p>
+              Estamos felizes em receber vocês aqui. Preparamos este espaço com muito carinho para que se sintam
+              em casa, mas com a tranquilidade que as férias merecem.
+            </p>
+            <p>Desliguem-se da rotina e aproveitem o pôr do sol.</p>
+            <p>Aproveitem a piscina!</p>
+            <p className="pt-3 font-script text-3xl text-primary sm:text-4xl" style={{ fontFamily: "var(--font-script)" }}>
+              Tenham uma excelente estadia!
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-24">
