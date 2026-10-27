@@ -63,25 +63,25 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.975 0.012 85);
-  --foreground: oklch(0.25 0.03 230);
-  --card: oklch(0.99 0.006 85);
+  --background: oklch(0.96 0.035 90);
+  --foreground: oklch(0.33 0.05 60);
+  --card: oklch(0.98 0.025 90);
   --card-foreground: oklch(0.25 0.03 230);
   --popover: oklch(0.99 0.006 85);
   --popover-foreground: oklch(0.25 0.03 230);
-  --primary: oklch(0.55 0.1 200);
+  --primary: oklch(0.44 0.08 130);
   --primary-foreground: oklch(0.99 0.005 85);
-  --secondary: oklch(0.94 0.025 80);
+  --secondary: oklch(0.9 0.045 115);
   --secondary-foreground: oklch(0.25 0.03 230);
   --muted: oklch(0.94 0.02 80);
-  --muted-foreground: oklch(0.48 0.03 230);
-  --accent: oklch(0.72 0.13 55);
+  --muted-foreground: oklch(0.45 0.05 60);
+  --accent: oklch(0.8 0.13 85);
   --accent-foreground: oklch(0.2 0.03 230);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.89 0.02 80);
+  --border: oklch(0.82 0.06 85);
   --input: oklch(0.89 0.02 80);
-  --ring: oklch(0.55 0.1 200);
+  --ring: oklch(0.44 0.08 130);
   --hero-foreground: oklch(0.99 0.005 85);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -136,12 +136,13 @@
 @theme inline {
   --color-hero-foreground: var(--hero-foreground);
   --font-display: "Fraunces", Georgia, serif;
+  --font-script: "Dancing Script", cursive;
   --font-sans: "Outfit", system-ui, sans-serif;
   --shadow-soft: 0 12px 30px -12px color-mix(in oklab, var(--primary) 35%, transparent);
 }
 
 @utility bg-hero-overlay {
-  background: linear-gradient(to top, oklch(0.2 0.03 230 / 0.75), oklch(0.2 0.03 230 / 0.1) 60%);
+  background: linear-gradient(to top, oklch(0.25 0.05 60 / 0.75), oklch(0.25 0.05 60 / 0.1) 60%);
 }
 
 @layer base {
