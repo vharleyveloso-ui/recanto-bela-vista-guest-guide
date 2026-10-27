@@ -27,11 +27,9 @@ function Index() {
         <img src={PHOTOS[0]} alt="Recanto Bela Vista" className="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-hero-overlay" />
         <div className="mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-end px-6 pb-20">
-          <p className="text-sm uppercase tracking-[0.3em] text-hero-foreground/80">Cabo Frio · RJ</p>
-          <h1 className="mt-3 max-w-3xl font-script text-6xl md:text-8xl text-hero-foreground" style={{ fontFamily: "var(--font-script)" }}>Seja bem-vindo!</h1>
-          <p className="mt-4 max-w-xl text-lg text-hero-foreground/90">
-            Piscina com cascata, churrasqueira e sol o dia inteiro. 4 hóspedes · 2 quartos · 2 banheiros.
-          </p>
+          <p className="text-sm uppercase tracking-[0.3em] text-hero-foreground/80">{"\n"}</p>
+          <h1 className="mt-3 max-w-3xl font-script text-6xl md:text-8xl text-hero-foreground" style={{ fontFamily: "var(--font-script)" }}>Guia de Boas Vindas!</h1>
+          <p className="mt-4 max-w-xl text-lg text-hero-foreground/90">{"\n"}</p>
           <a href={AIRBNB_URL} target="_blank" rel="noopener noreferrer"
              className="mt-8 inline-flex w-fit rounded-full bg-primary px-8 py-4 font-medium text-primary-foreground shadow-soft transition hover:opacity-90">
             Reservar no Airbnb
