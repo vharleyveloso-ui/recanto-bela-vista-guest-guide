@@ -20,6 +20,8 @@ export const Route = createFileRoute("/")({
 
 const ICONS = { "/quem-somos": User, "/check-in": LogIn, "/check-out": LogOut, "/regras": ClipboardList, "/contato": Smartphone, "/localizacao": MapPin, "/wifi": Wifi, "/padarias-e-cafes": Coffee, "/bares": Martini, "/restaurantes": UtensilsCrossed } as const;
 
+const HERO_WORDS = ["Guia", "de", "Boas", "Vindas!"];
+
 function Index() {
   return (
     <>
@@ -27,7 +29,14 @@ function Index() {
         <img src={PHOTOS[0]} alt="Recanto Bela Vista" className="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-hero-overlay" />
         <div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-center justify-center px-6 text-center">
-          <h1 className="font-script text-7xl leading-tight text-hero-foreground md:text-9xl" style={{ fontFamily: "var(--font-script)" }}>Guia de Boas Vindas!</h1>
+          <h1 className="hero-title flex flex-wrap justify-center gap-x-[0.3em] font-script text-7xl leading-tight text-hero-foreground md:text-9xl" style={{ fontFamily: "var(--font-script)" }}>
+            {HERO_WORDS.map((word, i) => (
+              <span key={word} className="hero-word" style={{ animationDelay: `${0.25 + i * 0.22}s` }}>
+                {word}
+              </span>
+            ))}
+          </h1>
+          <span className="hero-rule" aria-hidden="true" />
         </div>
       </section>
 
