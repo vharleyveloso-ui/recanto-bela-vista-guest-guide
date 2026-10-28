@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InfoPage } from "@/components/InfoPage";
 import { pageHead } from "@/lib/site";
-import hosts from "@/assets/carlos-jessica.jpg.asset.json";
+import hosts from "@/assets/carlos-jessica.jpg";
 
 export const Route = createFileRoute("/quem-somos")({
   head: () =>
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/quem-somos")({
     <InfoPage eyebrow="Conheça" title="Quem somos">
       <div className="flex justify-center pt-2">
         <img
-          src={hosts.url}
+          src={hosts}
           alt="Carlos e Jessica, anfitriões do Recanto Bela Vista"
           className="w-full max-w-xs rounded-3xl object-cover shadow-soft sm:max-w-sm"
         />
