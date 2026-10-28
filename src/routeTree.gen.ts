@@ -19,6 +19,7 @@ import { Route as PadariasECafesRouteImport } from './routes/padarias-e-cafes'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as RegrasRouteImport } from './routes/regras'
 import { Route as RestaurantesRouteImport } from './routes/restaurantes'
+import { Route as ShoppingRouteImport } from './routes/shopping'
 import { Route as WifiRouteImport } from './routes/wifi'
 
 const IndexRoute = IndexRouteImport.update({
@@ -71,6 +72,11 @@ const RestaurantesRoute = RestaurantesRouteImport.update({
   path: '/restaurantes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShoppingRoute = ShoppingRouteImport.update({
+  id: '/shopping',
+  path: '/shopping',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WifiRoute = WifiRouteImport.update({
   id: '/wifi',
   path: '/wifi',
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/quem-somos': typeof QuemSomosRoute
   '/regras': typeof RegrasRoute
   '/restaurantes': typeof RestaurantesRoute
+  '/shopping': typeof ShoppingRoute
   '/wifi': typeof WifiRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/quem-somos': typeof QuemSomosRoute
   '/regras': typeof RegrasRoute
   '/restaurantes': typeof RestaurantesRoute
+  '/shopping': typeof ShoppingRoute
   '/wifi': typeof WifiRoute
 }
 export interface FileRoutesById {
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/quem-somos': typeof QuemSomosRoute
   '/regras': typeof RegrasRoute
   '/restaurantes': typeof RestaurantesRoute
+  '/shopping': typeof ShoppingRoute
   '/wifi': typeof WifiRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/quem-somos'
     | '/regras'
     | '/restaurantes'
+    | '/shopping'
     | '/wifi'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/quem-somos'
     | '/regras'
     | '/restaurantes'
+    | '/shopping'
     | '/wifi'
   id:
     | '__root__'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/quem-somos'
     | '/regras'
     | '/restaurantes'
+    | '/shopping'
     | '/wifi'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   QuemSomosRoute: typeof QuemSomosRoute
   RegrasRoute: typeof RegrasRoute
   RestaurantesRoute: typeof RestaurantesRoute
+  ShoppingRoute: typeof ShoppingRoute
   WifiRoute: typeof WifiRoute
 }
 
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RestaurantesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shopping': {
+      id: '/shopping'
+      path: '/shopping'
+      fullPath: '/shopping'
+      preLoaderRoute: typeof ShoppingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wifi': {
       id: '/wifi'
       path: '/wifi'
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   QuemSomosRoute: QuemSomosRoute,
   RegrasRoute: RegrasRoute,
   RestaurantesRoute: RestaurantesRoute,
+  ShoppingRoute: ShoppingRoute,
   WifiRoute: WifiRoute,
 }
 export const routeTree = rootRouteImport
