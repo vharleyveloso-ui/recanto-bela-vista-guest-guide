@@ -20,6 +20,7 @@ export const NAV = [
   { to: "/padarias-e-cafes", label: "Padarias e cafés" },
   { to: "/bares", label: "Bares" },
   { to: "/restaurantes", label: "Restaurantes" },
+  { to: "/shopping", label: "Shopping" },
   { to: "/check-out", label: "Check-out" },
 ] as const;
 
