@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { User, ClipboardList, Smartphone, MapPin, Wifi, Coffee, Martini, UtensilsCrossed, LogIn, LogOut } from "lucide-react";
+import { User, ClipboardList, Smartphone, MapPin, Wifi, Coffee, Martini, UtensilsCrossed, LogIn, LogOut, ShoppingBag } from "lucide-react";
 import { NAV, PHOTOS } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const ICONS = { "/quem-somos": User, "/check-in": LogIn, "/check-out": LogOut, "/regras": ClipboardList, "/contato": Smartphone, "/localizacao": MapPin, "/wifi": Wifi, "/padarias-e-cafes": Coffee, "/bares": Martini, "/restaurantes": UtensilsCrossed } as const;
+const ICONS = { "/quem-somos": User, "/check-in": LogIn, "/check-out": LogOut, "/regras": ClipboardList, "/contato": Smartphone, "/localizacao": MapPin, "/wifi": Wifi, "/padarias-e-cafes": Coffee, "/bares": Martini, "/restaurantes": UtensilsCrossed, "/shopping": ShoppingBag } as const;
 
 const HERO_WORDS = ["Guia", "de", "Boas", "Vindas!"];
 
