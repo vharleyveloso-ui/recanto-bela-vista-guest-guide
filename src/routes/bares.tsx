@@ -14,6 +14,21 @@ export const Route = createFileRoute("/bares")({
         <p className="mt-2 text-base text-muted-foreground">
           Consulte a localização e como chegar pelo Google Maps.
         </p>
+      </div>
+      <a
+        href={O_BAR_MAPS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block overflow-hidden rounded-3xl shadow-soft"
+      >
+        <iframe
+          title="Mapa do O Bar"
+          src="https://www.google.com/maps?q=O+Bar+Unamar+Cabo+Frio&output=embed"
+          className="pointer-events-none h-72 w-full border-0"
+          loading="lazy"
+        />
+      </a>
+      <div className="rounded-3xl border border-border bg-card p-6 text-center text-foreground shadow-soft">
         <a
           href={O_BAR_MAPS_URL}
           target="_blank"
