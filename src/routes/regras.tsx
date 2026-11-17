@@ -98,7 +98,7 @@ function Regras() {
         <RuleCard
           icon={ShowerHead}
           title="Chuveiros"
-          items={["Não ligue os dois chuveiros ao mesmo tempo."]}
+          items={["Não ligue os dois chuveiros ao mesmo tempo, pois isso pode causar queda de energia."]}
         />
         <RuleCard
           icon={Toilet}
