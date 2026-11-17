@@ -7,13 +7,17 @@ export const Route = createFileRoute("/check-out")({
   component: () => (
     <InfoPage eyebrow="Saída" title="Check-out">
       <div className="rounded-3xl bg-primary p-8 text-center text-primary-foreground shadow-soft">
-        <p className="text-sm uppercase tracking-widest opacity-80">Até as</p>
+        <p className="text-sm uppercase tracking-widest opacity-80">Horário de saída</p>
         <p className="font-display text-6xl">11:00</p>
-        <p className="mt-2 text-sm opacity-80">Flexível, mediante disponibilidade</p>
       </div>
-      <div className="space-y-4 rounded-3xl bg-card p-6 text-foreground/90 shadow-soft">
-        <p>O check-out deve ser feito até as 11h.</p>
-        <p>Por favor, não exceda o horário, pois precisamos preparar o ambiente para novos hóspedes.</p>
+      <div className="space-y-5 rounded-3xl bg-card p-6 text-foreground/90 shadow-soft">
+        <p className="text-lg font-medium">Olá! Esperamos que tenham aproveitado muito a estadia! ❤️</p>
+        <ul className="space-y-4">
+          <li>• Confiram se não esqueceram nenhum pertence pessoal.</li>
+          <li>• 🕚 Horário de check-out: até às 11h.</li>
+          <li>• Agradecemos por escolher nosso espaço e esperamos recebê-los novamente em breve!</li>
+        </ul>
+        <p className="pt-2 font-medium">Boa viagem e até a próxima! ❤️</p>
       </div>
     </InfoPage>
   ),
