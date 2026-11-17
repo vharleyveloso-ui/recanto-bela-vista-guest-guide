@@ -89,8 +89,10 @@ function Regras() {
           icon={Droplets}
           title="Bomba da cisterna"
           items={[
-            "Ligue a bomba sempre que usar a piscina e desligue ao finalizar.",
-            "Ao sair da casa, deixe a bomba desligada.",
+            "Ligue a bomba ao entrar na casa.",
+            "Desligue a bomba ao sair.",
+            "Há um registro dentro da residência.",
+            "A bomba está identificada com a letra “B” na parte da bomba da cisterna.",
           ]}
         />
         <RuleCard
