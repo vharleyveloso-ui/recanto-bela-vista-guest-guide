@@ -118,13 +118,6 @@ function Regras() {
             "Garanta que todas as portas e janelas estejam trancadas.",
           ]}
         />
-        <div className="sm:col-span-2">
-          <RuleCard
-            icon={Trash2}
-            title="Antes do check‑out"
-            items={["Pedimos a gentileza de recolher o seu lixo antes do check‑out."]}
-          />
-        </div>
       </div>
 
       <div className="mt-8 rounded-3xl bg-primary px-6 py-10 text-center text-primary-foreground shadow-soft">
